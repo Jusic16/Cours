@@ -1,0 +1,17 @@
+﻿
+     form {
+     	border : groove 50px blue;
+        padding : 30px;
+     }
+
+
+html {
+  background: url(image1.jpg) no-repeat center fixed;
+  background-size: cover;
+}
+
+body {
+  color: black;
+}
+
+

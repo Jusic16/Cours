@@ -1,0 +1,113 @@
+﻿    <!-- Created: 07/10/2020 by BOUYGUJ -->
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional/EN">
+<html>
+  <head>
+    <title>Cours NSI : Les boucles en python</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="generator" content="PyScripter">
+    <link rel = "stylesheet" href = "./PageCSS2.css">
+
+</head>
+  <body>
+<h1>Les boucles en Python</h1>
+<p>Il y a deux sortes d'instructions pour réaliser les boucles :</p>
+<ul>
+
+ <li>While</li>
+ <li>For</li>
+</ul>
+
+<h2>La boucle "While" : </h2>
+<h3> Définition et syntaxe</h3>
+<p> Le mot-clé "while" signifie "tant que" en anglais. Le corps de la boucle (c'est-à-dire le bloc d'instructions
+ indentées) sera répété tant que la condition est vraie. <br/>
+
+Exemple: <br/>
+<code>
+x=2 <br/>
+while x*2 &lt;10 : <br/>
+        print (x) <br/>
+        x = x*2 <br/>
+print('Le programme n'est plus possible') </code> <br/> <br/>
+
+Dans l'exemple ci-dessus, x sera multiplié par 2 tant que sa valeur restera inférieure à 10.<br/>
+ 2*2 = 4&lt; 10  donc pour la première fois la condition est respectée. <br/>
+Ensuite 4*2 = 8 &lt; 10  la condition est de nouveau respectée. <br/>
+Par contre 2*8 = 16 &gt; 10 donc la machine affichera 'Le programme n'est plus possible'. <br/>
+</p>
+
+
+<h3> Exemple: décomposition d'un nombre en ses symboles </h3>
+<h4>Etude du problème</h4>
+<p> Décomposons le nombre 7843</p>
+Pour obtenir le chiffre (symbole) on réalise une opération de division 7843 = 784 * 10 + 3 <br/> <br/>
+Pour les unités : <br/>
+&nbsp;&nbsp;&nbsp;7843 % 10 = 3 (3 est le reste)<br/>
+&nbsp;&nbsp;&nbsp;7843 // 10 = 784 (784 est le quotient) <br/>
+Pour les dizaines :<br/>
+&nbsp;&nbsp;&nbsp;784 % 10 = 4 (4 est le reste) <br/>
+&nbsp;&nbsp;&nbsp;784 // 10 = 78 (78 est le quotient)<br/>
+Pour les centaines :<br/>
+&nbsp;&nbsp;&nbsp; 78 % 1 0= 8 (8 est le reste)<br/>
+&nbsp;&nbsp;&nbsp; 78 // 10 = 7 (7 est le quotient) <br/> <br/>
+
+ <h3>Algorithme : </h3>
+<code>
+ nombre = input("Donnez-moi un nombre nombre entier") <i>(L'utilisateur peut rentrer un nombre de son choix)</i><br/>
+nombre=int(nombre)<br/>
+def decompNombre (nombre: int , base : int ) -&gt; list : <i>(Initialisation de la variable locale)</i> <br/><br/>
+
+
+    listeSymbole = []<br/><br/>
+
+    while nombre != 0 :<br/>
+        reste = nombre % base <i>(base doit être remplacée par un nombre, par exemple 2 si on veut une écriture binaire à la fin)</i><br/>
+        nombre = nombre // base <i>(base peut aussi être remplacée par 10 si on veut une écriture décimale, ou par 16 si on veut une écriture hexadécimale)</i><br/>
+        #listeSymbole.append(reste) <i>(cela ne permet pas de changer l'ordre)</i><br/>
+        listeSymbole = [reste] + listeSymbole<br/>
+        print("Nombre =", nombre, "     et reste =", reste) <i>(on demande ici le retour du quotient et du reste)</i><br/>
+    return listeSymbole<br/><br/>
+
+
+
+</code>
+
+<h2> La boucle "For" (pour) : </h2>
+
+<h3> Définition et syntaxe</h3>
+
+La boucle for est une boucle while "déguisée",
+ elle propose une écriture simplifiée pour répéter la même séquence d'instructions pour tous les éléments d'un ensemble. <br/>
+
+Par exemple, nous pouvons demander d'afficher tous les nombres de 0 à 10 multipliés par 2. Pour cela nous utiliserons le programme suivant : <br/>
+<code>
+for i in range(0,11): (i va de 0 à 10 (11-1)) <br/>
+        print("i*2") <br/> <br/>
+</code>
+
+
+Et si nous voulons reprendre le programme précédent nous pouvons rajouter une boucle for : <br/>
+
+<code>
+    nombre = input("Donnez-moi un nombre nombre entier")<br/>
+    nombre=int(nombre)<br/>
+    def decompNombre (nombre: int , base : int ) -&gt; list :  <br/><br/>
+
+
+    listeSymbole = []<br/><br/>
+
+    while nombre != 0 :<br/>
+        reste = nombre % base <br/>
+        nombre = nombre // base <br/>
+        #listeSymbole.append(reste) <br/>
+        listeSymbole = [reste] + listeSymbole<br/>
+        print("Nombre =", nombre, "     et reste =", reste) <br/>
+    return listeSymbole<br/><br/>
+
+
+for base in range (2,11) : <i>(Pour tous les nombres compris entre 2 et (11-1) soit 10)</i><br/>
+    print (nombre, " = en base", base, " : ") <i>(Retourner le nombre "en base" et la base demandée precedemment)</i><br/>
+    decompNombre(nombre, base) <i>(Au final, on a donc le nombre en écriture voulue et la precision de cette écriture avec)</i><br/>
+</code>
+  </body>
+</html>

@@ -1,0 +1,31 @@
+﻿
+    table { border-collapse : collapse; }
+th, td {
+  width : 100px;
+  height: 100px;
+  border: 10px solid black;
+}
+td:nth-child(2n+1) {
+	background : blue;
+}
+th:nth-child(odd) {
+	background : purple;
+}
+th:nth-child(even) {
+	background : blue;
+}
+tr:nth-child(even) td:nth-child(odd) {
+	background : yellow;
+}
+tr:nth-child(3n) td:nth-child(odd) {
+	background : pink;
+}
+
+tr:nth-child(2n+1) td:nth-child(even) {
+	background : orange;
+
+
+}
+td:nth-child(2n) {
+	background : lightgreen;
+}
